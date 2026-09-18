@@ -1,0 +1,230 @@
+{
+  "info": {
+    "_postman_id": "talenthub-api-2026",
+    "name": "TalentHub API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "profileId",
+      "value": "1"
+    },
+    {
+      "key": "projectId",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "POST Profile",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Vanessa Maria Oliveira Guimar\\u00e3es\", \"email\": \"vanessa@email.com\", \"bio\": \"Desenvolvedora apaixonada por tecnologia.\", \"githubUrl\": \"https://github.com/usuario\", \"linkedinUrl\": \"https://linkedin.com/in/usuario\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/profiles",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "profiles"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Profile",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/profiles/{{profileId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "profiles",
+            "{{profileId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Technology Java",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Java\",\"category\":\"Backend\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/technologies",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "technologies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Technology Spring Boot",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Spring Boot\",\"category\":\"Backend\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/technologies",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "technologies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Technology PostgreSQL",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"PostgreSQL\",\"category\":\"Database\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/technologies",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "technologies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Technologies",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/technologies",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "technologies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Project",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"Sistema de Gestão de Eventos\",\"description\":\"API para gerenciamento de eventos e participantes.\",\"projectUrl\":\"https://github.com/usuario/eventos\",\"githubUrl\":\"https://github.com/usuario/eventos\",\"profileId\":1,\"technologyIds\":[1,2,3]}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/projects",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "projects"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Projects",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/api/projects",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "projects"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Feedback - próxima etapa",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"rating\":5,\"comment\":\"Projeto muito interessante.\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/projects/{{projectId}}/feedbacks",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "projects",
+            "{{projectId}}",
+            "feedbacks"
+          ]
+        }
+      }
+    }
+  ]
+}
